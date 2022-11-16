@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+    <title>Google Maps Multiple Markers</title> 
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyB3cEyWZ5qDfoOHJgg45zWg3SHpXavcZ-Q" defer></script>
+    <script type="text/javascript" src="mapDisplay.js"></script>
+    <script type="text/javascript">
+        function mapDisp(){
+            // Multiple markers location, latitude, and longitude
+            var markers = [
+                ['Brooklyn Museum, NY', 40.671349546127146, -73.96375730105808],
+                ['Central Library, Brooklyn, NY', 40.67254944015601, -73.9682162170653],
+                ['Prospect Park Zoo, NY', 40.66427511834109, -73.96512605857858],
+                ['Barclays Center, Brooklyn, NY', 40.68268267107631, -73.97546296241961]
+            ];
+                                
+            // Info window content
+            var infoWindowContent = [
+                ['<div class="info_content">' +
+                '<h2>Brooklyn Museum</h2>' +
+                '<h3>200 Eastern Pkwy, Brooklyn, NY 11238</h3>' +
+                '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' + 
+                '</div>'],
+                ['<div class="info_content">' +
+                '<h2>Central Library</h2>' +
+                '<h3>10 Grand Army Plaza, Brooklyn, NY 11238</h3>' +
+                '<p>The Central Library is the main branch of the Brooklyn Public Library, located at Flatbush Avenue.</p>' +
+                '</div>'],
+                ['<div class="info_content">' +
+                '<h2>Prospect Park Zoo</h2>' +
+                '<h3>450 Flatbush Ave, Brooklyn, NY 11225</h3>' +
+                '<p>The Prospect Park Zoo is a 12-acre zoo located off Flatbush Avenue on the eastern side of Prospect Park, Brooklyn, New York City.</p>' +
+                '</div>'],
+                ['<div class="info_content">' +
+                '<h2>Barclays Center</h2>' +
+                '<h3>620 Atlantic Ave, Brooklyn, NY 11217</h3>' +
+                '<p>Barclays Center is a multi-purpose indoor arena in the New York City borough of Brooklyn.</p>' +
+                '</div>']
+            ];
+            initMap(markers, infoWindowContent);
+        }
+    </script>
+</head> 
+<body onload="mapDisp()">
+    <div id="mapCanvas" style="width: 800px; height: 500px;"></div>
+    <input type="button" name="" value="default" onclick="mapDisp()">
+</body>
+</html>
